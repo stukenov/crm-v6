@@ -1,5 +1,12 @@
 # CRM System - Version 6
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Laravel](https://img.shields.io/badge/Laravel-11.9-FF2D20?logo=laravel&logoColor=white)](https://laravel.com)
+[![PHP](https://img.shields.io/badge/PHP-8.2%2B-777BB4?logo=php&logoColor=white)](https://www.php.net)
+[![Livewire](https://img.shields.io/badge/Livewire-4.x-FB70A9?logo=livewire&logoColor=white)](https://livewire.laravel.com)
+
+> An international business platform built on Laravel + Livewire — multi-country/multi-language management, general-ledger accounting, and HLS video streaming in one CRM.
+
 A specialized CRM system returning to Livewire with focus on international operations, featuring country/language management and accounting integration with HLS video support.
 
 ## Description
@@ -9,11 +16,11 @@ Version 6 brings the project full circle back to Livewire while introducing spec
 ## Tech Stack
 
 - **Backend**: Laravel 11.9 (PHP 8.2+)
-- **Frontend**: Livewire 3.5 + Volt 1.6
-- **UI**: DaisyUI 4.12 + Tailwind CSS 3.4
-- **UI Components**: Mary UI 1.35 (Livewire components)
+- **Frontend**: Livewire 4 + Volt 1.6
+- **UI**: DaisyUI 5 + Tailwind CSS 4
+- **UI Components**: Mary UI 2.8 (Livewire components)
 - **Database**: SQLite/MySQL/PostgreSQL support
-- **Build Tool**: Vite 5
+- **Build Tool**: Vite 8
 - **Video**: HLS (HTTP Live Streaming) support
 
 ## Key Features
@@ -33,37 +40,35 @@ Version 6 brings the project full circle back to Livewire while introducing spec
 - **Language**: Multi-language support
 - **GeneralLedgerEntry**: Financial accounting and transaction tracking
 
-## Installation
+## Quickstart
 
-1. Clone the repository:
+Requires **PHP 8.2+**, **Composer**, and **Node.js**. The default setup runs on SQLite — no database server needed.
+
 ```bash
+# 1. Clone
 git clone https://github.com/stukenov/crm-v6.git
 cd crm-v6
-```
 
-2. Install dependencies:
-```bash
+# 2. Install dependencies
 composer install
 npm install
-```
 
-3. Setup environment:
-```bash
+# 3. Configure environment
 cp .env.example .env
 php artisan key:generate
 touch database/database.sqlite
-```
 
-4. Initialize database:
-```bash
+# 4. Run migrations
 php artisan migrate
-```
 
-5. Build and serve:
-```bash
+# 5. Build assets and serve
 npm run build
 php artisan serve
 ```
+
+The app is now available at <http://localhost:8000>.
+
+To switch from SQLite to MySQL/PostgreSQL, update the `DB_CONNECTION` and related `DB_*` values in your `.env` before running `php artisan migrate`.
 
 ## Development
 
@@ -99,6 +104,21 @@ V6 introduces specialized features:
 - **Component-Based UI**: DaisyUI + Mary UI for consistent design
 
 This suggests evolution from a pure CRM toward an international media/content business platform with accounting capabilities.
+
+## The CRM series
+
+This repository is the latest entry in a deliberate, six-version exploration of CRM architectures. Rather than maintaining a single codebase, I rebuilt the same problem domain six times — each version a clean experiment in a different stack, frontend paradigm, or architectural philosophy. The goal was to understand the trade-offs firsthand: monolith vs. SPA, Blade/Livewire vs. React/Inertia, full-featured frameworks vs. simplified custom patterns.
+
+The result is a side-by-side map of how the same CRM evolves across modern PHP/JS ecosystems — and **V6** (this repo) is where that journey lands: a Livewire-based international business platform with accounting and HLS video.
+
+| Version | Focus | Stack | Repo |
+| --- | --- | --- | --- |
+| V1 | Initial CRM with a flexible, Node-based architecture | Laravel 11 + Livewire | [crm-v1](https://github.com/stukenov/crm-v1) |
+| V2 | Full-featured CRM — Contacts, Deals, Interactions | Laravel + Jetstream | [crm-v2](https://github.com/stukenov/crm-v2) |
+| V3 | Stability & optimization release on the V2 architecture | Laravel + Jetstream | [crm-v3](https://github.com/stukenov/crm-v3) |
+| V4 | Modern SPA rewrite | React + Inertia.js + Material-UI + NextUI | [crm-v4](https://github.com/stukenov/crm-v4) |
+| V5 | Experimental simplified architecture | Nuxt.js-inspired patterns | [crm-v5](https://github.com/stukenov/crm-v5) |
+| **V6** ← you are here | **International business platform** — accounting, multi-language, HLS video | **Laravel 11 + Livewire** | [crm-v6](https://github.com/stukenov/crm-v6) |
 
 ## License
 
